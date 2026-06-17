@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9771A4FA-364C-4523-944E-1D704F70A4B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuoluoPiDesktop.App", "src\LuoluoPiDesktop.App\LuoluoPiDesktop.App.csproj", "{2206EB9C-BC4C-4059-A22C-918D829092C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuoluoPiDesktop.Core", "src\LuoluoPiDesktop.Core\LuoluoPiDesktop.Core.csproj", "{5C31A782-C051-44BA-A542-F7566F9B4EDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuoluoPiDesktop.Infrastructure", "src\LuoluoPiDesktop.Infrastructure\LuoluoPiDesktop.Infrastructure.csproj", "{6ED75074-5F9B-4E43-88FA-3B18B418C3C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuoluoPiDesktop.Tests", "src\LuoluoPiDesktop.Tests\LuoluoPiDesktop.Tests.csproj", "{8E538D2E-EB73-4B6E-88D2-44C2E1054D63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2206EB9C-BC4C-4059-A22C-918D829092C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2206EB9C-BC4C-4059-A22C-918D829092C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2206EB9C-BC4C-4059-A22C-918D829092C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2206EB9C-BC4C-4059-A22C-918D829092C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C31A782-C051-44BA-A542-F7566F9B4EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C31A782-C051-44BA-A542-F7566F9B4EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C31A782-C051-44BA-A542-F7566F9B4EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C31A782-C051-44BA-A542-F7566F9B4EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ED75074-5F9B-4E43-88FA-3B18B418C3C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED75074-5F9B-4E43-88FA-3B18B418C3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED75074-5F9B-4E43-88FA-3B18B418C3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED75074-5F9B-4E43-88FA-3B18B418C3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E538D2E-EB73-4B6E-88D2-44C2E1054D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E538D2E-EB73-4B6E-88D2-44C2E1054D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E538D2E-EB73-4B6E-88D2-44C2E1054D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E538D2E-EB73-4B6E-88D2-44C2E1054D63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2206EB9C-BC4C-4059-A22C-918D829092C2} = {9771A4FA-364C-4523-944E-1D704F70A4B7}
+		{5C31A782-C051-44BA-A542-F7566F9B4EDA} = {9771A4FA-364C-4523-944E-1D704F70A4B7}
+		{6ED75074-5F9B-4E43-88FA-3B18B418C3C4} = {9771A4FA-364C-4523-944E-1D704F70A4B7}
+		{8E538D2E-EB73-4B6E-88D2-44C2E1054D63} = {9771A4FA-364C-4523-944E-1D704F70A4B7}
+	EndGlobalSection
+EndGlobal

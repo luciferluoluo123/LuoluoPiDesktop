@@ -1,0 +1,15 @@
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\bin\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.deps.json
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\bin\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.dll
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\bin\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.pdb
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\bin\Debug\net8.0-windows\LuoluoPiDesktop.Core.dll
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\bin\Debug\net8.0-windows\LuoluoPiDesktop.Core.pdb
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.csproj.AssemblyReference.cache
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.AssemblyInfoInputs.cache
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.AssemblyInfo.cs
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.csproj.CoreCompileInputs.cache
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPi.5F2DEFFE.Up2Date
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.dll
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\refint\LuoluoPiDesktop.Infrastructure.dll
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\LuoluoPiDesktop.Infrastructure.pdb
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Infrastructure\obj\Debug\net8.0-windows\ref\LuoluoPiDesktop.Infrastructure.dll

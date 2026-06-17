@@ -1,0 +1,303 @@
+<UserControl x:Class="LuoluoPiDesktop.Views.ChatView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LuoluoPiDesktop.Views"
+             xmlns:vm="clr-namespace:LuoluoPiDesktop.ViewModels">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>  <!-- 项目名 + 状态 -->
+            <RowDefinition Height="*"/>     <!-- 对话气泡 -->
+            <RowDefinition Height="Auto"/>  <!-- 输入区 -->
+        </Grid.RowDefinitions>
+
+        <!-- ── 顶部状态条 ─────────────────────────────────────────────── -->
+        <Border Grid.Row="0"
+                Background="#F8F8F8"
+                BorderBrush="#E0E0E0"
+                BorderThickness="0,0,0,1"
+                Padding="14,9">
+            <Grid>
+                <TextBlock Text="{Binding ProjectName}"
+                           FontWeight="SemiBold" FontSize="14"
+                           VerticalAlignment="Center"/>
+                <Border HorizontalAlignment="Right"
+                        CornerRadius="3" Padding="8,2">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Background" Value="#E8F5E9"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RuntimeState}" Value="Thinking">
+                                    <Setter Property="Background" Value="#FFF3E0"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding RuntimeState}" Value="ExecutingTool">
+                                    <Setter Property="Background" Value="#E3F2FD"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding RuntimeState}" Value="Faulted">
+                                    <Setter Property="Background" Value="#FFEBEE"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding RuntimeState}" Value="NotStarted">
+                                    <Setter Property="Background" Value="#F5F5F5"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding RuntimeState}" Value="Starting">
+                                    <Setter Property="Background" Value="#FFF8E1"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <TextBlock Text="{Binding StateLabel}"
+                               FontSize="11" FontWeight="SemiBold">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Foreground" Value="#388E3C"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RuntimeState}" Value="Thinking">
+                                        <Setter Property="Foreground" Value="#E65100"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding RuntimeState}" Value="ExecutingTool">
+                                        <Setter Property="Foreground" Value="#1565C0"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding RuntimeState}" Value="Faulted">
+                                        <Setter Property="Foreground" Value="#C62828"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding RuntimeState}" Value="NotStarted">
+                                        <Setter Property="Foreground" Value="#757575"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding RuntimeState}" Value="Starting">
+                                        <Setter Property="Foreground" Value="#F57F17"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- ── 对话气泡区 ─────────────────────────────────────────────── -->
+        <ScrollViewer Grid.Row="1"
+                      x:Name="ChatScrollViewer"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+            <ItemsControl ItemsSource="{Binding Bubbles}" Padding="14,10">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <!-- DataType 驱动的模板自动分发 -->
+                <ItemsControl.Resources>
+
+                    <!-- ── 聊天气泡（用户 / AI 消息）────────────────── -->
+                    <DataTemplate DataType="{x:Type vm:ChatBubbleViewModel}">
+                        <Grid Margin="0,4">
+                            <Border CornerRadius="10" Padding="10,7" MaxWidth="500">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Background"          Value="#F0F0F0"/>
+                                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsUser}" Value="True">
+                                                <Setter Property="Background"          Value="#0078D4"/>
+                                                <Setter Property="HorizontalAlignment" Value="Right"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Text}"
+                                               TextWrapping="Wrap"
+                                               FontSize="13"
+                                               LineHeight="20">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Foreground" Value="#212121"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsUser}" Value="True">
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <!-- 流式中光标 -->
+                                    <TextBlock Text="▌" FontSize="13" Foreground="#999"
+                                               Visibility="{Binding IsStreaming,
+                                                   Converter={x:Static local:BoolToVisibleConverter.Instance}}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+
+                    <!-- ── 工具调用卡片（shell 命令 / 文件变更）─────── -->
+                    <DataTemplate DataType="{x:Type vm:ToolBubbleViewModel}">
+                        <Border Margin="0,4"
+                                Background="#FAFAFA"
+                                BorderBrush="#DDEEFF"
+                                BorderThickness="1"
+                                CornerRadius="6"
+                                HorizontalAlignment="Stretch">
+                            <StackPanel>
+
+                                <!-- 标题栏 -->
+                                <Border Background="#EEF6FF"
+                                        CornerRadius="6,6,0,0"
+                                        Padding="10,6">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- 图标 -->
+                                        <TextBlock Grid.Column="0"
+                                                   FontSize="12" VerticalAlignment="Center"
+                                                   Margin="0,0,6,0">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Text" Value="$ "/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ToolType}" Value="file">
+                                                            <Setter Property="Text" Value="F "/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+
+                                        <!-- 命令/文件名 -->
+                                        <TextBlock Grid.Column="1"
+                                                   Text="{Binding Label}"
+                                                   FontFamily="Consolas,Courier New,monospace"
+                                                   FontSize="12"
+                                                   VerticalAlignment="Center"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   Foreground="#1565C0"/>
+
+                                        <!-- 退出码徽章 -->
+                                        <Border Grid.Column="2"
+                                                CornerRadius="3" Padding="6,1"
+                                                Margin="8,0,6,0" VerticalAlignment="Center">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Background" Value="#FFF3E0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsRunning}" Value="False">
+                                                            <Setter Property="Background" Value="#E8F5E9"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding IsSuccess}" Value="False">
+                                                            <Setter Property="Background" Value="#FFEBEE"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock Text="{Binding ExitBadge}"
+                                                       FontSize="10" FontWeight="SemiBold">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Foreground" Value="#E65100"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsRunning}" Value="False">
+                                                                <Setter Property="Foreground" Value="#388E3C"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding IsSuccess}" Value="False">
+                                                                <Setter Property="Foreground" Value="#C62828"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+
+                                        <!-- 折叠按钮 -->
+                                        <Button Grid.Column="3"
+                                                Command="{Binding ToggleExpandCommand}"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Padding="4,0"
+                                                FontSize="10"
+                                                Foreground="#666">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Content" Value="▼"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsExpanded}" Value="False">
+                                                            <Setter Property="Content" Value="▶"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+                                    </Grid>
+                                </Border>
+
+                                <!-- 输出内容（可折叠） -->
+                                <ScrollViewer MaxHeight="200"
+                                              VerticalScrollBarVisibility="Auto"
+                                              HorizontalScrollBarVisibility="Auto"
+                                              Visibility="{Binding IsExpanded,
+                                                  Converter={x:Static local:BoolToVisibleConverter.Instance}}">
+                                    <TextBlock Text="{Binding Output}"
+                                               FontFamily="Consolas,Courier New,monospace"
+                                               FontSize="12"
+                                               Foreground="#333"
+                                               TextWrapping="NoWrap"
+                                               Padding="10,6"/>
+                                </ScrollViewer>
+
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+
+                </ItemsControl.Resources>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!-- ── 输入区 ──────────────────────────────────────────────────── -->
+        <Border Grid.Row="2"
+                Background="#F8F8F8"
+                BorderBrush="#E0E0E0"
+                BorderThickness="0,1,0,0"
+                Padding="14,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0"
+                         Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+                         VerticalContentAlignment="Center"
+                         Padding="10,7"
+                         FontSize="13"
+                         MinHeight="38"
+                         TextWrapping="NoWrap"
+                         AcceptsReturn="False"
+                         KeyDown="OnInputKeyDown"
+                         IsEnabled="{Binding IsReady}"/>
+
+                <Button Grid.Column="1"
+                        Command="{Binding SendCommand}"
+                        Content="发送"
+                        Margin="8,0,0,0"
+                        Padding="18,7"
+                        MinWidth="64"
+                        FontSize="13"/>
+
+                <Button Grid.Column="2"
+                        Command="{Binding InterruptCommand}"
+                        Content="中止"
+                        Margin="6,0,0,0"
+                        Padding="18,7"
+                        MinWidth="64"
+                        FontSize="13"
+                        Background="#E53935"
+                        Foreground="White"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

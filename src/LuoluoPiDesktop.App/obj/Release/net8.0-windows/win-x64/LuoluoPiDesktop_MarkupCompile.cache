@@ -1,0 +1,20 @@
+﻿LuoluoPiDesktop
+
+
+winexe
+C#
+.cs
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.App\obj\Release\net8.0-windows\win-x64\
+LuoluoPiDesktop
+none
+false
+TRACE;RELEASE;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.App\App.xaml
+410559638
+
+131130857216
+209-2126738159
+MainWindow.xaml;Views\ChatView.xaml;Views\ProjectListView.xaml;Views\SettingsView.xaml;
+
+False
+

@@ -1,0 +1,11 @@
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\bin\Debug\net8.0-windows\LuoluoPiDesktop.Core.deps.json
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\bin\Debug\net8.0-windows\LuoluoPiDesktop.Core.dll
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\bin\Debug\net8.0-windows\LuoluoPiDesktop.Core.pdb
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\LuoluoPiDesktop.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\LuoluoPiDesktop.Core.AssemblyInfoInputs.cache
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\LuoluoPiDesktop.Core.AssemblyInfo.cs
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\LuoluoPiDesktop.Core.csproj.CoreCompileInputs.cache
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\LuoluoPiDesktop.Core.dll
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\refint\LuoluoPiDesktop.Core.dll
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\LuoluoPiDesktop.Core.pdb
+D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\src\LuoluoPiDesktop.Core\obj\Debug\net8.0-windows\ref\LuoluoPiDesktop.Core.dll

@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "LuoluoPiDesktop.Infrastructure/1.0.0": {
+        "dependencies": {
+          "LuoluoPiDesktop.Core": "1.0.0"
+        },
+        "runtime": {
+          "LuoluoPiDesktop.Infrastructure.dll": {}
+        }
+      },
+      "LuoluoPiDesktop.Core/1.0.0": {
+        "runtime": {
+          "LuoluoPiDesktop.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LuoluoPiDesktop.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LuoluoPiDesktop.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
