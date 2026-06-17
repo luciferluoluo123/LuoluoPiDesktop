@@ -1,4 +1,0 @@
-D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\publish\LuoluoPiDesktop.pdb
-D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\publish\LuoluoPiDesktop.Core.pdb
-D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\publish\LuoluoPiDesktop.Infrastructure.pdb
-D:\AI_Projects\gpt_code\LuoluoPiDesktop\Luoluo Pi Desktop\publish\LuoluoPiDesktop.exe
